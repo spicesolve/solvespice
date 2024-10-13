@@ -440,6 +440,50 @@
       </div>
     </section>
 
+    <!-- Blog -->
+    <section id="blog">
+      <div class="container-bloger">
+        <div class="header-bloger">
+          <h1>Our Blog</h1>
+          <p>You can see our blog here, click to see blog detail. You can see our daily activity or news about exported, product process and many more.</p>
+        </div>
+        <div class="blog-container">
+          <div class="arrow left" onclick="prevSlide()">
+            <i class="fas fa-chevron-left"></i>
+          </div>
+          <div class="blog-cards-wrapper">
+            <!-- Add as many cards as you want -->
+            <div class="blog-card">
+              <img alt="Various spices and herbs on a table" src="https://storage.googleapis.com/a1aa/image/DGOiRfRDF20RKaK8EPUV1eav6AOg8FfhzuVK2XqhHIZqecZOB.jpg" />
+              <div class="blog-content">
+                <h3>Indonesia’s Black Pepper Export Up 44.5% to US$17mn in Q1</h3>
+                <div class="meta"><i class="fas fa-calendar-alt"></i> 6 April 2022 <i class="fas fa-file-alt"></i> Artikel</div>
+              </div>
+            </div>
+            <div class="blog-card">
+              <img alt="Various spices and herbs on a table" src="https://storage.googleapis.com/a1aa/image/DGOiRfRDF20RKaK8EPUV1eav6AOg8FfhzuVK2XqhHIZqecZOB.jpg" />
+              <div class="blog-content">
+                <h3>Indonesia spices up global community at World Expo 2020 Dubai</h3>
+                <div class="meta"><i class="fas fa-calendar-alt"></i> 6 April 2022 <i class="fas fa-file-alt"></i> Artikel</div>
+              </div>
+            </div>
+            <div class="blog-card">
+              <img alt="Various spices and herbs on a table" src="https://storage.googleapis.com/a1aa/image/DGOiRfRDF20RKaK8EPUV1eav6AOg8FfhzuVK2XqhHIZqecZOB.jpg" />
+              <div class="blog-content">
+                <h3>Insights on the Seasoning & Spices Global Market to 2030</h3>
+                <div class="meta"><i class="fas fa-calendar-alt"></i> 6 April 2022 <i class="fas fa-file-alt"></i> Artikel</div>
+              </div>
+            </div>
+            <!-- Add more cards as needed -->
+          </div>
+          <div class="arrow right" onclick="nextSlide()">
+            <i class="fas fa-chevron-right"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
     <section class="contact" id="contact">
       <div class="contact-container">
         <div class="contact-card">
@@ -495,55 +539,82 @@
         <i class="fab fa-whatsapp"></i>
       </div>
     </a>
-  </body>
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script>
-    var swiper = new Swiper(".swiper-container", {
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      loop: true,
-    });
-  </script>
 
-  <script>
-    const navbar = document.querySelector(".navbar");
-    const container = document.querySelector(".container");
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-    window.addEventListener("scroll", function () {
-      const containerTop = container.getBoundingClientRect().top;
+    <script>
+      let currentIndex = 0;
+      const cards = document.querySelectorAll(".blog-card");
 
-      if (containerTop < 0) {
-        // Jika sudah melewati elemen container
-        navbar.classList.add("scrolled");
-      } else {
-        // Jika masih di atas elemen container
-        navbar.classList.remove("scrolled");
+      function showSlide(index) {
+        // Hide all cards
+        cards.forEach((card, i) => {
+          card.style.display = i === index ? "block" : "none";
+        });
       }
-    });
-  </script>
 
-  <!-- untuk membuat dropdown card-->
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % cards.length;
+        showSlide(currentIndex);
+      }
 
-  <script>
-    function toggleAccordion(cardNumber) {
-      const content = document.getElementById(`content-${cardNumber}`);
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+        showSlide(currentIndex);
+      }
 
-      // Close all other content sections
-      const allContent = document.querySelectorAll(".card-content");
-      allContent.forEach((section) => {
-        if (section !== content) {
-          section.classList.remove("open");
+      // Initialize the slider
+      showSlide(currentIndex);
+    </script>
+
+    <script>
+      var swiper = new Swiper(".swiper-container", {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        loop: true,
+      });
+    </script>
+
+    <script>
+      const navbar = document.querySelector(".navbar");
+      const container = document.querySelector(".container");
+
+      window.addEventListener("scroll", function () {
+        const containerTop = container.getBoundingClientRect().top;
+
+        if (containerTop < 0) {
+          // Jika sudah melewati elemen container
+          navbar.classList.add("scrolled");
+        } else {
+          // Jika masih di atas elemen container
+          navbar.classList.remove("scrolled");
         }
       });
+    </script>
 
-      // Toggle the clicked section
-      content.classList.toggle("open");
-    }
-  </script>
+    <!-- untuk membuat dropdown card-->
+
+    <script>
+      function toggleAccordion(cardNumber) {
+        const content = document.getElementById(`content-${cardNumber}`);
+
+        // Close all other content sections
+        const allContent = document.querySelectorAll(".card-content");
+        allContent.forEach((section) => {
+          if (section !== content) {
+            section.classList.remove("open");
+          }
+        });
+
+        // Toggle the clicked section
+        content.classList.toggle("open");
+      }
+    </script>
+  </body>
 </html>
