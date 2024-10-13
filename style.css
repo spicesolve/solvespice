@@ -36,7 +36,7 @@ html {
   align-items: center;
   padding: 20px 50px;
   background: transparent; /* Awal transparan */
-  transition: background-color 0.3s ease; /* Transisi latar belakang yang halus */
+  transition: background-color 0.3s ease, top 0.3s ease; /* Transisi latar belakang dan posisi yang halus */
   position: fixed; /* Posisi tetap */
   top: 0;
   left: 0;
@@ -46,6 +46,7 @@ html {
 
 .navbar.scrolled {
   background-color: black; /* Latar belakang hitam saat discroll */
+  top: 0; /* Tetap di atas */
 }
 
 .navbar .logo {
@@ -74,6 +75,7 @@ html {
 .nav-links a:hover {
   color: #f39c12; /* Ubah warna saat hover */
 }
+
 
 .nav-links a::after {
   content: "";
