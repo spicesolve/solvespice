@@ -86,6 +86,11 @@ html {
   transition: width 0.3s ease;
 }
 
+.logo a {
+  text-decoration: none;
+  color: white;
+}
+
 .nav-links a:hover::after {
   width: 100%; /* Garis bawah muncul dari kiri ke kanan */
 }
@@ -100,8 +105,9 @@ html {
 
 .content h1 {
   font-family: "Dancing Script", cursive;
-  font-size: 55px;
-  margin: 0;
+  font-size: 75px;
+  width: 900px;
+  margin: 0 auto;
   color: white;
 }
 
@@ -157,6 +163,7 @@ html {
   font-size: 40px; /* Ukuran ikon */
 }
 
+/* About */
 .container {
   display: flex;
   flex-direction: row;
@@ -176,6 +183,7 @@ html {
 .text-content h1 {
   font-family: "Bad Script", sans-serif;
   font-size: 36px;
+  text-align: left;
   margin-bottom: 20px;
   color: #000;
 }
@@ -199,13 +207,14 @@ html {
   max-width: 45%; /* Agar gambar tidak terlalu besar dan tetap dalam proporsi */
 }
 
+/* Stats */
 .stats-section {
   position: relative;
   background: url("img/gallery/backgorund2.jpg") no-repeat center center fixed;
   background-size: cover;
   color: white;
   text-align: center;
-  padding: 50px 0;
+  padding: 100px 0;
 }
 
 .stats-section::before {
@@ -221,7 +230,7 @@ html {
 
 .stat {
   display: inline-block;
-  margin: 0 20px;
+  margin: 0 50px;
   z-index: 2;
   position: relative;
 }
@@ -260,7 +269,7 @@ html {
 .content-gallery h1 {
   margin-top: 70px;
   font-size: 2.5rem;
-  color: #333;
+  color: #000000;
 }
 
 .content-gallery p {
@@ -581,6 +590,63 @@ h1 {
   display: flex;
   justify-content: center;
   gap: 10px;
+}
+
+/* Contact  */
+.contact-container {
+  display: flex;
+  background-color: #f0eded;
+  gap: 20px;
+  justify-content: center; /* Memastikan card terpusat secara horizontal */
+}
+
+.contact-card {
+  background-color: transparent;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 350px;
+  transition: all 0.3s ease;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.contact-card i {
+  font-size: 40px;
+  color: #e07a5f;
+}
+
+.contact-card h3 {
+  font-size: 1.2rem;
+  font-family: "Bad Script", sans-serif;
+  color: #000000;
+  margin: 10px 0;
+}
+
+.contact-card p {
+  color: #777;
+  margin-top: -10px;
+  font-size: 16px;
+}
+
+.contact-card:hover {
+  background-color: #fff;
+  border: none;
+  box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.438);
+  transform: translateX(-5px);
+}
+
+.icon.phone::before {
+  content: "\260E"; /* Unicode for phone icon */
+}
+
+.icon.email::before {
+  content: "\2709"; /* Unicode for email icon */
+}
+
+.icon.whatsapp::before {
+  content: "\1F4F1"; /* Unicode for whatsapp icon */
 }
 
 /* footer */
