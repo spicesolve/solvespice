@@ -907,11 +907,11 @@ footer {
 
   .content h1 {
     font-size: 35px;
-    width: 250px;
+    width: 300px;
   }
 
   .content p {
-    font-size: 14px;
+    font-size: 10px;
     padding: 0 20px;
   }
 }
