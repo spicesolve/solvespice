@@ -6,10 +6,14 @@
   box-sizing: border-box;
 }
 
-html {
+html,
+body {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
 }
 
+/* ====================================================== NAVBAR ======================================================*/
 .background {
   background: url(img/gallery/backgorund2.jpg) no-repeat;
   background-size: cover;
@@ -164,7 +168,7 @@ html {
   font-size: 40px; /* Ukuran ikon */
 }
 
-/* About */
+/*====================================================== About ======================================================*/
 .container {
   display: flex;
   flex-direction: row;
@@ -208,7 +212,7 @@ html {
   max-width: 45%; /* Agar gambar tidak terlalu besar dan tetap dalam proporsi */
 }
 
-/* Stats */
+/*====================================================== Stats ======================================================*/
 .stats-section {
   position: relative;
   background: url("img/gallery/backgorund2.jpg") no-repeat center center fixed;
@@ -246,7 +250,7 @@ html {
   margin: 5px 0 0;
 }
 
-/* gallery*/
+/*====================================================== GALLERY ======================================================*/
 #gallery {
   background-color: #f0efef;
 }
@@ -303,19 +307,6 @@ html {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
-  .gallery {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  }
-}
-
-@media (max-width: 576px) {
-  .gallery {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  }
-}
-
 /* Card Kontent */
 .container-card {
   max-width: 100%;
@@ -370,7 +361,7 @@ h1 {
   margin: 0;
 }
 
-/* PRODUK  */
+/*====================================================== PRODUK ======================================================*/
 .produk {
   background-color: #f1eeee;
   width: 100%;
@@ -530,7 +521,7 @@ h1 {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Efek bayangan di bawah tombol */
 }
 
-/* blog */
+/*====================================================== BLOG ======================================================*/
 .blog-section {
   background-color: #f0eded;
   text-align: center;
@@ -638,7 +629,7 @@ h1 {
   height: auto;
 }
 
-/* TEAM */
+/*====================================================== TEAM ======================================================*/
 .team-section {
   background-color: #fff;
   padding: 50px 0;
@@ -702,7 +693,7 @@ h1 {
   gap: 10px;
 }
 
-/* Contact  */
+/*====================================================== Contact  ======================================================*/
 .contact-container {
   display: flex;
   background-color: #f0eded;
@@ -759,7 +750,7 @@ h1 {
   content: "\1F4F1"; /* Unicode for whatsapp icon */
 }
 
-/* footer */
+/*====================================================== footer ======================================================*/
 footer {
   background-color: #0d1b2a;
   color: #fff;
@@ -838,26 +829,90 @@ footer {
 .footer-copyright a:hover {
   text-decoration: underline;
 }
+/* ================================================================================================================================== */
+/* ================================================================ Responsiveness ================================================== */
+/* ================================================================================================================================== */
 
-/* Responsiveness */
-@media (max-width: 768px) {
-  .container {
+/* Burger Menu */
+.burger {
+  display: none;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Menampilkan burger di layar kecil */
+@media (max-width: 800px) {
+  .burger {
+    display: block; /* Tampilkan burger di mobile */
+  }
+
+  .nav-links {
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
     flex-direction: column;
-  }
-
-  .text-content {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-
-  .image-content {
+    align-items: center;
     justify-content: center;
-    flex-wrap: wrap; /* Mengizinkan gambar jatuh ke bawah pada layar kecil */
+    width: 100%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
   }
 
-  .image-content img {
-    max-width: 80%; /* Pada layar kecil, gambar menjadi lebih besar */
-    margin-bottom: 20px; /* Tambahkan jarak bawah antar gambar */
+  .nav-links a {
+    font-size: 24px;
+    margin: 10px 0; /* Mengatur margin untuk merapikan tampilan */
+    color: white;
+    text-decoration: none;
+  }
+
+  .nav-links .logo {
+    margin: 20px 0; /* Menambahkan jarak pada logo */
+    color: white; /* Warna teks logo */
+    font-size: 24px; /* Sesuaikan ukuran font logo */
+  }
+
+  .nav-links.active {
+    transform: translateX(0%); /* Tampilkan nav links saat hamburger diaktifkan */
+  }
+
+  /* Animasi burger menu (X ketika aktif) */
+  .burger.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .burger.toggle .line2 {
+    opacity: 0;
+  }
+
+  .burger.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  .social-icons {
+    font-size: 40px;
+    z-index: -1;
+  }
+
+  .content h1 {
+    font-size: 45px;
+    width: 400px;
+  }
+
+  .content p {
+    font-size: 14px;
+    padding: 0 20px;
   }
 }
 
