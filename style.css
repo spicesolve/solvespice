@@ -906,17 +906,235 @@ footer {
   }
 
   .content h1 {
-    font-size: 35px;
+    font-size: 50px;
     width: 300px;
   }
 
   .content p {
-    font-size: 10px;
+    font-size: 12px;
     padding: 0 20px;
+    width: 350px;
   }
 }
 
-/* Responsivitas footer */
+/* Responsive about */
+@media only screen and (max-width: 800px) {
+  .container {
+    flex-direction: column-reverse; /* Gambar akan muncul di atas teks */
+    padding: 20px 10px;
+  }
+
+  .text-content {
+    padding: 10px 0;
+  }
+
+  .text-content h1 {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .text-content p {
+    font-size: 14px;
+    text-align: justify;
+    display: hidden;
+  }
+
+  .image-content {
+    flex-direction: row; /* Menjadikan gambar sejajar secara horizontal */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden; /* Mencegah elemen meluber */
+  }
+
+  .image-content img {
+    margin: 2; /* Hilangkan margin agar gambar bersebelahan */
+    width: 50vw; /* Atur lebar gambar menjadi setengah dari viewport */
+    height: 200px; /* Tinggi gambar tetap agar seragam */
+    object-fit: cover; /* Gambar akan tetap dalam proporsi meski terpotong */
+  }
+}
+
+/* ====================================================responive produk ==========================================*/
+@media only screen and (max-width: 800px) {
+  .produk {
+    margin-bottom: -700px;
+  }
+
+  .product-section {
+    flex-direction: column; /* Stack content vertically */
+    text-align: center;
+  }
+
+  .product-image img {
+    width: 100%; /* Gambar akan mengisi 100% lebar container */
+    max-width: 150px; /* Batasi ukuran gambar agar tidak terlalu besar */
+    height: 150px; /* Buat gambar berbentuk persegi */
+    object-fit: cover; /* Gambar akan terpotong tapi tetap proporsional */
+    border-radius: 10px; /* Tambahkan radius untuk efek sudut melengkung */
+    margin-bottom: 20px; /* Pisahkan gambar dari teks atau elemen lain di bawahnya */
+  }
+
+  .product-details {
+    width: 70%;
+    text-align: center; /* Center text for smaller screens */
+  }
+
+  .product-details h2 {
+    font-size: 25px; /* Reduce heading size */
+  }
+
+  .product-details p {
+    font-size: 13px; /* Slightly reduce paragraph font size */
+  }
+
+  .product-details .info-table th,
+  .product-details .info-table td {
+    font-size: 12px; /* Adjust table text size for mobile */
+  }
+
+  .download-btn {
+    margin-bottom: 200px;
+  }
+
+  /* ====================================================responive team ==========================================*/
+
+  .contact-container {
+    display: flex;
+    flex-direction: column; /* Mengubah layout ke vertikal */
+    justify-content: center; /* Memastikan card-card terpusat secara vertikal */
+    align-items: center; /* Memastikan card-card terpusat secara horizontal */
+    gap: 10px; /* Mengurangi jarak antar card */
+    height: 100vh; /* Menjaga tinggi container agar selalu penuh layar */
+  }
+
+  .contact-card {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 350px;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+  }
+
+  .contact-card i {
+    font-size: 40px;
+    color: #e07a5f;
+  }
+
+  .contact-card h3 {
+    font-size: 1.2rem;
+    font-family: "Bad Script", sans-serif;
+    color: #000000;
+    margin: 10px 0;
+  }
+
+  .contact-card p {
+    color: #777;
+    margin-top: -10px;
+    font-size: 16px;
+  }
+
+  .contact-card:hover {
+    background-color: #fff;
+    border: none;
+  }
+
+  .contact-card {
+    width: 90%; /* Memastikan card tidak terlalu besar di layar kecil */
+    padding: 15px; /* Mengurangi padding agar lebih ringkas */
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .contact-card i {
+    font-size: 30px; /* Mengecilkan ikon agar sesuai dengan ukuran layar */
+  }
+
+  .contact-card h3 {
+    font-size: 1rem; /* Mengecilkan ukuran teks judul */
+  }
+
+  .contact-card p {
+    font-size: 14px; /* Mengecilkan ukuran teks paragraf */
+  }
+}
+
+/* ====================================================responive team ==========================================*/
+@media only screen and (max-width: 800px) {
+  .team-section {
+    background-color: #fff;
+    padding: 50px 0;
+  }
+
+  .team-section h1 {
+    font-size: 40px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 40px;
+  }
+
+  .team-section p {
+    font-size: 14px;
+    padding: 20px;
+    text-align: justify;
+    color: #8a8888;
+    max-width: 1050px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    margin-top: -50px;
+  }
+
+  .team-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Agar elemen berpindah baris di layar kecil */
+    padding: 10px;
+  }
+
+  .team-member {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%; /* Default 100% agar di mobile full-width */
+    max-width: 300px; /* Batasi lebar maksimal */
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .team-member img {
+    border-radius: 50%;
+    width: auto;
+    height: 150px; /* Kurangi tinggi agar lebih seimbang di layar kecil */
+    object-fit: cover;
+    border: 3px solid #f39c12;
+  }
+
+  .team-member h3 {
+    font-family: "Bad Script", sans-serif;
+    font-size: 20px;
+    margin: 10px 0 5px;
+  }
+
+  .team-member p {
+    color: #888;
+    text-align: center;
+    font-size: 14px;
+    margin: 0 0 2px;
+  }
+
+  .team-member .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+}
+
+/* ====================================================responive footer ==========================================*/
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;
