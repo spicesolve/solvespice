@@ -769,7 +769,13 @@ footer {
 }
 
 .footer-section h2 {
-  margin-bottom: 35px;
+  margin-bottom: 0;
+  font-size: 30px;
+}
+
+.footer-section h5 {
+  margin-bottom: 5px;
+  font-weight: 500;
 }
 
 .footer-section h2 span {
