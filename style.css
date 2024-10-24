@@ -398,7 +398,183 @@ h1 {
   margin: 0;
 }
 
-/*====================================================== PRODUK ======================================================*/
+/*====================================================== produk ======================================================*/
+
+.produk-sambal {
+  padding: 100px 0;
+  background: url("img/gallery/backgorund2.jpg") no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  text-align: center;
+}
+
+.produk-sambal a {
+  text-decoration: none;
+}
+
+.produk-sambal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Overlay hitam dengan transparansi */
+  z-index: 1;
+}
+
+.produk-sambal h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: white;
+  position: relative;
+  z-index: 2; /* Supaya judul berada di atas overlay */
+}
+
+.produk-sambal p {
+  text-align: left;
+}
+
+.container-sambal {
+  display: flex;
+  justify-content: center; /* Untuk memusatkan card */
+  flex-wrap: wrap; /* Agar card bisa berpindah baris pada layar sempit */
+  gap: 10px; /* Mengatur jarak antar card */
+  position: relative;
+  z-index: 2; /* Supaya card berada di atas overlay */
+}
+
+/* Styling untuk card sambal */
+.card-sambal {
+  flex: 0 0 30%;
+  margin: 0 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  margin-bottom: 40px;
+}
+
+.card-sambal:hover {
+  transform: scale(1.05);
+}
+
+.image-sambal {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* Konten dalam card sambal */
+.card-content-sambal {
+  padding: 15px;
+}
+
+.card-content-sambal h3 {
+  font-size: 1.5rem;
+  text-align: left;
+  color: #000000;
+  margin: 10px 0;
+}
+
+/* Footer card sambal untuk harga dan tombol WhatsApp */
+.footer-sambal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.price-sambal {
+  font-weight: bold;
+  font-size: 20px;
+  color: #f26522;
+}
+
+.produk-sambal p {
+  font-family: "Poppins", sans-serif; /* Menggunakan font yang sama dengan judul */
+  font-size: 14px; /* Ukuran font paragraf */
+  color: rgb(194, 193, 193); /* Warna teks agar sesuai dengan tema */
+  line-height: 1.5; /* Tinggi baris untuk keterbacaan */
+  max-width: 600px; /* Lebar maksimum paragraf */
+  margin: 10px auto; /* Menyusun paragraf di tengah dengan jarak atas/bawah */
+  margin-bottom: 80px;
+  z-index: 2; /* Agar paragraf berada di atas overlay */
+  position: relative; /* Membuat z-index berfungsi */
+}
+
+/* Tombol WhatsApp */
+.whatsapp-sambal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 800px; /* Lebar tombol */
+  height: 50px; /* Tinggi tombol */
+  background-color: #25d366; /* Warna hijau WhatsApp */
+  border-radius: 10px; /* Membuat tombol bulat */
+  text-decoration: none;
+  color: white; /* Warna ikon */
+  margin-top: -60px;
+
+  transition: background-color 0.3s ease;
+}
+
+.whatsapp-sambal i {
+  margin-right: 10px;
+}
+.whatsapp-sambal:hover {
+  background-color: #128c7e; /* Warna hijau lebih gelap saat di-hover */
+}
+
+.whatsapp-icon-sambal {
+  font-size: 24px; /* Ukuran ikon lebih besar */
+}
+
+@media (max-width: 800px) {
+  .produk-sambal {
+    padding: 30px 0; /* Menyesuaikan padding */
+  }
+
+  .produk-sambal h2 {
+    font-size: 30px; /* Ukuran font judul lebih kecil untuk mobile */
+  }
+
+  .produk-sambal p {
+    font-size: 14px; /* Ukuran font paragraf lebih kecil untuk mobile */
+    max-width: 90%; /* Memperbesar lebar maksimum untuk mobile */
+    margin: 10px auto; /* Menyusun paragraf di tengah */
+  }
+
+  .container-sambal {
+    flex-direction: column; /* Mengubah tampilan card menjadi kolom pada mobile */
+    align-items: center; /* Memusatkan card */
+  }
+
+  .card-sambal {
+    flex: 0 0 100%; /* Card mengambil 100% lebar pada mobile */
+    margin: 10px 0; /* Mengatur jarak antar card */
+  }
+
+  .image-sambal {
+    height: 150px; /* Menyesuaikan tinggi gambar untuk mobile */
+  }
+
+  .footer-sambal {
+    flex-direction: column; /* Mengatur footer menjadi kolom untuk mobile */
+    align-items: center; /* Memusatkan isi footer */
+  }
+
+  .whatsapp-sambal {
+    width: 100%; /* Tombol WhatsApp mengambil 100% lebar */
+    margin-top: 10px; /* Menambahkan margin untuk jarak antar elemen */
+  }
+}
+
+/*================================================= rempah-rempah ===================================================*/
 .produk {
   background-color: #f1eeee;
   width: 100%;
@@ -1186,6 +1362,8 @@ footer {
     gap: 10px;
   }
 }
+
+/* ====================================================sambal ==========================================*/
 
 /* ====================================================responive footer ==========================================*/
 @media (max-width: 768px) {
