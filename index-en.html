@@ -152,15 +152,16 @@
 
     <!-- produk -->
     <section class="produk-sambal" id="sambal">
-      <h2 data-aos="fade-down" data-aos-duration="2000" data-aos-delay="0">Sambal Products | Jojokitchen</h2>
-      <p data-aos="fade-right" data-aos-duration="2000" data-aos-delay="0">Discover a variety of the best sambals ready to tantalize your taste buds!</p>
+      <h2 data-aos="fade-down" data-aos-duration="2000" data-aos-delay="0" class="title-sambal">Sambal Products | Jojokitchen</h2>
+      <p data-aos="fade-right" data-aos-duration="2000" data-aos-delay="0" class="isi-sambal">Discover a variety of the best sambal options ready to tantalize your taste buds!</p>
+
       <div class="container-sambal">
         <!-- Card 1 -->
         <div data-aos="flip-down" data-aos-duration="2000" data-aos-delay="0" class="card-sambal">
-          <img src="img/gallery/andalimansam.jpg" alt="Andaliman Sambal" class="image-sambal" />
+          <img src="img/gallery/andalimansam.jpg" alt="Andaliman Sambal" class="image-sambal" onclick="openModal(this)" />
           <div class="card-content-sambal">
             <h3>Andaliman Sambal</h3>
-            <p>Experience the unique spicy sensation of Indonesia with Andaliman Sambal, a distinctive sambal from North Sumatra that uses andaliman, a rare spice with a biting heat and citrusy bitterness.</p>
+            <p>Experience the unique spicy sensation of Indonesia with Andaliman Sambal, a special sambal from North Sumatra that uses andaliman, a rare spice with a sharp peppery taste and a zesty citrusy note.</p>
             <div class="footer-sambal">
               <span class="whatsapp-sambal"><i class="fab fa-whatsapp whatsapp-icon-sambal"></i> Order Now</span>
             </div>
@@ -169,10 +170,10 @@
 
         <!-- Card 2 -->
         <div data-aos="flip-down" data-aos-duration="2000" data-aos-delay="0" class="card-sambal">
-          <img src="img/gallery/cumi samb.jpg" alt="Cumi Sambal" class="image-sambal" />
+          <img src="img/gallery/cumi samb.jpg" alt="Squid Sambal" class="image-sambal" onclick="openModal(this)" />
           <div class="card-content-sambal">
-            <h3>Extra Spicy Cumi Sambal</h3>
-            <p>Enjoy the extraordinary spicy delight of Extra Spicy Cumi Sambal, a sambal featuring tender squid pieces and an explosive heat.</p>
+            <h3>Extra Spicy Squid Sambal</h3>
+            <p>Enjoy the extraordinary spicy flavor of Extra Spicy Squid Sambal, sambal with tender squid pieces and an explosive heat.</p>
             <div class="footer-sambal">
               <span class="whatsapp-sambal"><i class="fab fa-whatsapp whatsapp-icon-sambal"></i> Order Now</span>
             </div>
@@ -181,10 +182,10 @@
 
         <!-- Card 3 -->
         <div data-aos="flip-down" data-aos-duration="2000" data-aos-delay="0" class="card-sambal">
-          <img src="img/gallery/cumi samb.jpg" alt="Cumi Sambal" class="image-sambal" />
+          <img src="img/gallery/sambal lagi.jpg" alt="Matah Sambal" class="image-sambal image-sambals" onclick="openModal(this)" />
           <div class="card-content-sambal">
-            <h3>Sambal Matah</h3>
-            <p>Bring the freshness of Bali to your dishes with Sambal Matah, a fresh sambal made with lemongrass, shallots, and chili peppers.</p>
+            <h3>Matah Sambal</h3>
+            <p>Bring the freshness of Bali into your meal with Matah Sambal, a fresh sambal made from lemongrass, shallots, and chili.</p>
             <div class="footer-sambal">
               <span class="whatsapp-sambal"><i class="fab fa-whatsapp whatsapp-icon-sambal"></i> Order Now</span>
             </div>
@@ -192,6 +193,13 @@
         </div>
       </div>
     </section>
+
+    <!-- Modal Pop-up for Image -->
+    <div id="myModal" class="modal">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img class="modal-content" id="img-modal" />
+      <div id="caption"></div>
+    </div>
 
     <div class="container-card">
       <h1 data-aos="fade-down" data-aos-duration="2000" data-aos-delay="0">Why Choose SpiceSolve?</h1>
@@ -746,6 +754,25 @@
 
         // Toggle the clicked section
         content.classList.toggle("open");
+      }
+    </script>
+
+    <script>
+      // Fungsi untuk membuka modal
+      function openModal(element) {
+        var modal = document.getElementById("myModal");
+        var modalImg = document.getElementById("img-modal");
+        var captionText = document.getElementById("caption");
+
+        modal.style.display = "block"; // Tampilkan modal
+        modalImg.src = element.src; // Atur sumber gambar modal dengan gambar yang diklik
+        captionText.innerHTML = element.alt; // Tampilkan teks alt sebagai caption
+      }
+
+      // Fungsi untuk menutup modal
+      function closeModal() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none"; // Sembunyikan modal
       }
     </script>
 
