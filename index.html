@@ -65,7 +65,16 @@
           <a href="#about">Tentang</a>
           <a href="#gallery">Galeri</a>
           <a href="#sambal">Beli Sambal</a>
-          <a href="#product">Produk</a>
+
+          <!-- Dropdown Produk -->
+          <div class="dropdown-produk">
+            <a href="#product" class="dropbtn-produk"
+              >Produk <i class="fa fa-caret-down"></i
+            ></a>
+            <div class="dropdown-content-produk">
+              <a href="#catalog">Catalog</a>
+            </div>
+          </div>
           <div class="logo"><a href="#">SpiceSolve</a></div>
           <a href="#team">Team</a>
           <a href="#blog">Blog</a>
@@ -813,10 +822,39 @@
           data-aos-delay="0"
           class="download-container"
         >
-          <button class="download-btn">
-            <i class="fa fa-download"></i> Unduh Catalog
-          </button>
+          <a
+            href="img/gallery/Company Profile Presentation BSM.pdf"
+            target="download"
+            class="download-btn"
+          ></a>
         </div>
+      </div>
+    </section>
+
+    <!-- Catalog Section -->
+    <section id="catalog" class="catalog">
+      <div class="container">
+        <h2 data-aos="fade-up">Catalog Produk</h2>
+        <p data-aos="fade-up" data-aos-delay="200">
+          Temukan berbagai pilihan sambal spesial kami
+        </p>
+
+        <div class="catalog-wrapper" data-aos="zoom-in" data-aos-delay="400">
+          <img
+            src="img/gallery/Katalog Produk perusahaan_page-0001.jpg"
+            alt="Catalog Produk"
+          />
+        </div>
+        <!-- Tombol Download -->
+        <a
+          href="img/gallery/Katalog Produk perusahaan_page-0001.jpg"
+          download
+          class="btn-cat"
+          data-aos="fade-up"
+          data-aos-delay="600"
+        >
+          Download Catalog
+        </a>
       </div>
     </section>
 

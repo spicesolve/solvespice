@@ -214,10 +214,47 @@ body {
   font-size: 40px; /* Ukuran ikon */
 }
 
+/* Style dropdown menu */
+.dropdown-produk {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-produk .dropbtn-produk {
+  text-decoration: none;
+  color: white; /* sesuaikan warna nav-link */
+  padding: 10px 15px;
+  display: inline-block;
+}
+
+.dropdown-content-produk {
+  display: none;
+  position: absolute;
+  background-color: #222; /* warna background dropdown */
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.dropdown-content-produk a {
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content-produk a:hover {
+  background-color: #444; /* efek hover */
+}
+
+.dropdown-produk:hover .dropdown-content-produk {
+  display: block; /* muncul saat hover */
+}
+
 /*====================================================== About ======================================================*/
 .about {
   padding: 80px 0;
-  background-color: #fff;
+  background-color: #fcfbf9;
   border-radius: 10px;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
   max-width: 1200px;
@@ -245,6 +282,15 @@ body {
 
 .btn-download-selengkapnya {
   background: #e67e22;
+}
+
+.btn-download-selengkapnya:hover {
+  transition: background 0.3s ease;
+  background: #984903;
+  -webkit-transition: background 0.3s ease;
+  -moz-transition: background 0.3s ease;
+  -ms-transition: background 0.3s ease;
+  -o-transition: background 0.3s ease;
 }
 
 .company-header {
@@ -295,6 +341,66 @@ body {
   margin-bottom: 30px;
 }
 
+/* Catalog Section */
+.catalog {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #ff7043, #ffcc80);
+  text-align: center;
+  color: white;
+}
+
+.catalog h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.catalog p {
+  margin-bottom: 30px;
+  font-size: 1rem;
+  color: #fff9f4;
+}
+
+/* Catalog Image Wrapper */
+.catalog-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.catalog-wrapper:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.catalog-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Button Catalog */
+.btn-cat {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 25px;
+  background: #ff5722;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-cat:hover {
+  background: #e64a19;
+  transform: translateY(-2px);
+}
+
 .text-content {
   flex: 1;
 }
@@ -308,7 +414,7 @@ body {
 }
 
 .highlight {
-  color: #f39c12;
+  color: #e67e22;
   font-weight: 600;
 }
 
@@ -343,7 +449,7 @@ body {
 }
 
 .company-infos strong {
-  color: #f39c12;
+  color: #e67e22;
   min-width: 180px; /* tambahin sedikit supaya label rata */
   display: inline-block;
 }
