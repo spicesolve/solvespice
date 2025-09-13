@@ -70,7 +70,7 @@ body {
 .nav-links a {
   color: white;
   text-decoration: none;
-
+  right: 0px;
   margin: 0 15px;
   font-weight: 600;
   position: relative;
@@ -342,11 +342,14 @@ body {
 }
 
 /* Catalog Section */
+
 .catalog {
-  padding: 60px 20px;
+  padding: 20px 20px 60px; /* hilangkan padding atas */
   background: linear-gradient(135deg, #ff7043, #ffcc80);
   text-align: center;
+
   color: white;
+  scroll-margin-top: -20px; /* biar tidak ketutup navbar saat klik menu */
 }
 
 .catalog h2 {
@@ -955,7 +958,7 @@ h1 {
   width: 100%;
   margin: 0 auto;
   padding: 20px;
-  margin-bottom: -500px;
+  padding-bottom: 50px;
 }
 
 .produk h1 {
@@ -1068,28 +1071,6 @@ h1 {
 
 .product-details {
   flex: 1;
-}
-
-.download-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-/* CSS untuk tombol */
-.download-btn {
-  display: flex;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #d35400;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  margin-top: -500px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 /* Menambah margin antara ikon dan teks */
@@ -1572,10 +1553,6 @@ footer {
 
 /* ====================================================responive produk ==========================================*/
 @media only screen and (max-width: 800px) {
-  .produk {
-    margin-bottom: -700px;
-  }
-
   .product-section {
     flex-direction: column; /* Stack content vertically */
     text-align: center;
