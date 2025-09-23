@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap-image/1.1">
-    <url>
-        <loc>https://solvespices.github.io/solvespice/</loc>
-        <lastmod>2024-10-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <!-- Tambahkan URL lainnya di sini -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   <url>
+      <loc>https://www.spicesolve.com/</loc>
+      <lastmod>2025-09-23</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+   </url>
+   <!-- Tambahkan URL halaman lain di sini -->
+   <url>
+      <loc>https://www.spicesolve.com/about</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
 </urlset>
